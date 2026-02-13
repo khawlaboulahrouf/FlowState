@@ -63,3 +63,9 @@ export const renderTodo = (container, onOpenTimer) => {
       </button>
     </div>
   `;
+  // ----- INTERACTIONS -----
+  const addBtn = document.getElementById("addBtn");
+  const newTaskContainer = document.getElementById("newTaskContainer");
+  const confirmAddBtn = document.getElementById("confirmAddBtn");
+  const taskInput = document.getElementById("taskInput");
+      }
