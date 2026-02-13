@@ -43,3 +43,8 @@ export const renderError = (container, message, onBack) => {
 
   document.getElementById("backFromError").onclick = onBack;
 };
+export const emptyState = () => `
+  <p class="text-center text-gray-400 mt-10">
+    🌸 Ta liste est vide, ajoute ta première tâche pour entrer en FlowState 🌸
+  </p>
+`;
