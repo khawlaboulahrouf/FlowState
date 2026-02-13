@@ -68,4 +68,9 @@ export const renderTodo = (container, onOpenTimer) => {
   const newTaskContainer = document.getElementById("newTaskContainer");
   const confirmAddBtn = document.getElementById("confirmAddBtn");
   const taskInput = document.getElementById("taskInput");
+   // Toggle input visibility
+  addBtn.onclick = () => {
+    newTaskContainer.classList.toggle("hidden");
+    if (!newTaskContainer.classList.contains("hidden")) taskInput.focus();
+  };
       }
