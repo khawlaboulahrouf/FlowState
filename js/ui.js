@@ -2,7 +2,7 @@ export const renderStart = (container, onStart) => {
   container.innerHTML = `
     <div 
       class="h-full w-full relative bg-cover bg-center"
-      style="background-image: url('todo.webp');"
+      style="background-image: url('todo.jpg');"
     >
 
       <!-- Dark overlay -->

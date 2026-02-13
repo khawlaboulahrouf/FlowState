@@ -19,7 +19,7 @@ export const renderTodo = (container, onOpenTimer) => {
 
       <!-- ILLUSTRATION + TITLE -->
       <div class="flex flex-col items-center mt-4 px-6">
-        <img src="todoH.webp" class="w-65 drop-shadow-lg mb-2" />
+        <img src="todoH.jpg" class="w-65 drop-shadow-lg mb-2" />
         <h2 class="text-center font-semibold text-lg mb-4">
           What do you want to do today
         </h2>
