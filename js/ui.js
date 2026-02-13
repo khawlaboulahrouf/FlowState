@@ -22,6 +22,7 @@ export const renderStart = (container, onStart) => {
   document.getElementById("startBtn").onclick = onStart;
 };
 
+
 export const renderError = (container, message, onBack) => {
   container.innerHTML = `
     <div class="h-full flex flex-col bg-[#F3EFFA]">
@@ -43,6 +44,7 @@ export const renderError = (container, message, onBack) => {
 
   document.getElementById("backFromError").onclick = onBack;
 };
+
 export const emptyState = () => `
   <p class="text-center text-gray-400 mt-10">
     🌸 Ta liste est vide, ajoute ta première tâche pour entrer en FlowState 🌸

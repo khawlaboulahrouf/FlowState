@@ -63,14 +63,55 @@ export const renderTodo = (container, onOpenTimer) => {
       </button>
     </div>
   `;
+
   // ----- INTERACTIONS -----
   const addBtn = document.getElementById("addBtn");
   const newTaskContainer = document.getElementById("newTaskContainer");
   const confirmAddBtn = document.getElementById("confirmAddBtn");
   const taskInput = document.getElementById("taskInput");
-   // Toggle input visibility
+
+  // Toggle input visibility
   addBtn.onclick = () => {
     newTaskContainer.classList.toggle("hidden");
     if (!newTaskContainer.classList.contains("hidden")) taskInput.focus();
   };
-      }
+
+  // Confirm adding new task
+  confirmAddBtn.onclick = () => {
+    const title = taskInput.value.trim();
+    if (!title || !regex.test(title)) return alert("Le titre ne doit contenir que lettres, chiffres et espaces !");
+    tasks.push({ id: Date.now(), title, done: false });
+    Storage.set("tasks", tasks);
+    rerender();
+  };
+
+  // Checkbox toggle
+  document.querySelectorAll(".toggle").forEach(cb => {
+    cb.onclick = () => {
+      const id = Number(cb.dataset.id);
+      tasks = tasks.map(t => t.id === id ? { ...t, done: !t.done } : t);
+      Storage.set("tasks", tasks);
+      rerender();
+    };
+  });
+
+  // Delete task
+  document.querySelectorAll(".deleteBtn").forEach(btn => {
+    btn.onclick = () => {
+      const id = Number(btn.dataset.id);
+      tasks = tasks.filter(t => t.id !== id);
+      Storage.set("tasks", tasks);
+      rerender();
+    };
+  });
+
+  // Open Timer
+  document.querySelectorAll(".timerBtn").forEach(btn => {
+    btn.onclick = () => {
+      const id = Number(btn.dataset.id);
+      const task = tasks.find(t => t.id === id);
+      onOpenTimer(task);
+    };
+  });
+};
+
